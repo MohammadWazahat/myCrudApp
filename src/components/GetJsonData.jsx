@@ -15,6 +15,17 @@ const GetJsonData = () => {
 
   // console.log(myUser);
 
+  const handleDelete = (id) =>{
+    // window.confirm ask for confirmation of deletion
+    const confirm = window.confirm("would you like to delete the user");
+    if(confirm){
+      axios.delete(`http://localhost:3030/users/` + id).then(res => {
+        location.reload(); // reload us to the same page
+      }).catch(err => console.log(err));
+    }
+    console.log(id)
+  }
+
   
   return (
     <div>
@@ -46,7 +57,7 @@ const GetJsonData = () => {
                   <Link to= {`/updateForm/` + user.id } >update user</Link>
                 </td>
                 <td>
-                  <button >delete</button>
+                  <button onClick={e => handleDelete(user.id)} >delete</button>
                 </td>
              
               </tr>
