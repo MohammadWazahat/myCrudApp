@@ -4,7 +4,9 @@ import MyApp from "./components/MyApp";
 function App() {
   return (
     <>
-      <MyApp/>
+      <div >
+        <MyApp />
+      </div>
     </>
   );
 }

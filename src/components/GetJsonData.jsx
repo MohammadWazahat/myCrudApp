@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {Link}  from 'react-router-dom'
+import './GetJsonData.css'
 
 const GetJsonData = () => {
   const [myUser, setMyUser] = useState([]);
@@ -28,11 +29,14 @@ const GetJsonData = () => {
 
   
   return (
-    <div>
-      <Link to="/form" >Add User</Link>
-      <table>
+    <div >
+      <div className="h-20 text-3xl flex justify-center items-center" >User List</div>
+      <div className=" flex justify-end m-4">
+      <Link className="link border border-slate-200  " to="/form" >Add User</Link>
+      </div>
+      <table className="border border-slate-200 flex flex-col gap-4"  >
         <thead>
-          <tr>
+          <tr className="headrow border border-slate-200  ">
             <td>index</td>
             <td>first name</td>
             <td>last name</td>
@@ -43,21 +47,21 @@ const GetJsonData = () => {
         <tbody>
           {myUser.map((user, index) => {
             return (
-              <tr key={index}>
+              <tr className="bodyrow border border-slate-200 " key={index}>
                 <td>{index + 1}</td>
                 <td>{user.first_name}</td>
                 <td>{user.last_name}</td>
                 <td>{user.gender}</td>
                 <td>{user.city}</td>
-                <td>{user.id}</td>
+               
                 <td>
-                  <Link to={`/read/` + user.id } >Read</Link>
+                  <Link className="link border border-slate-200 " to={`/read/` + user.id } >Read</Link>
                 </td>
                 <td>
-                  <Link to= {`/updateForm/` + user.id } >update user</Link>
+                  <Link className="link border border-slate-200 " to= {`/updateForm/` + user.id } >update user</Link>
                 </td>
                 <td>
-                  <button onClick={e => handleDelete(user.id)} >delete</button>
+                  <button className="link" onClick={e => handleDelete(user.id)} >delete</button>
                 </td>
              
               </tr>

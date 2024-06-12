@@ -29,7 +29,7 @@ const MyApp = () => {
   ])
 
   return (
-    <div>
+    <div >
        <RouterProvider router={route}></RouterProvider>
     </div>
   )
