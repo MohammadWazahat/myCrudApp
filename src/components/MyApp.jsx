@@ -3,6 +3,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AddDataJson from './AddDataJson';
 import GetJsonData from './GetJsonData';
 import UpdateData from './UpdateData';
+import ReadSingleData from './ReadSingleData';
 
 
 const MyApp = () => {
@@ -19,6 +20,10 @@ const MyApp = () => {
     {
       path : "/updateForm/:id",
       element : <UpdateData/> ,
+    },
+    {
+      path : "/read/:id",
+      element : <ReadSingleData/> ,
     },
 
   ])

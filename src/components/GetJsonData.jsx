@@ -13,7 +13,9 @@ const GetJsonData = () => {
     fetchData();
   }, []);
 
-  console.log(myUser);
+  // console.log(myUser);
+
+  
   return (
     <div>
       <Link to="/form" >Add User</Link>
@@ -36,8 +38,12 @@ const GetJsonData = () => {
                 <td>{user.last_name}</td>
                 <td>{user.gender}</td>
                 <td>{user.city}</td>
+                <td>{user.id}</td>
                 <td>
-                  <Link to="/updateForm/:id" >update user</Link>
+                  <Link to={`/read/` + user.id } >Read</Link>
+                </td>
+                <td>
+                  <Link to= {`/updateForm/` + user.id } >update user</Link>
                 </td>
                 <td>
                   <button >delete</button>
